@@ -45,7 +45,11 @@ btn_consultar_nome.addEventListener('click', (e) => {
     
     const nome = document.getElementById('nome').value
 
-    fetch(`http://localhost:3000/usuario/buscar/${nome}`)
+    fetch(`http://localhost:3000/usuario/buscar/${nome}`,{
+        headers: {
+        'Authorization': token
+    }
+    })
     .then(res => res.json())
     .then(dados => {
 
